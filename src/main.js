@@ -1,8 +1,20 @@
 import Vue from "vue";
+import "./plugins/fontawesome";
+import "@/scss/main.scss";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import './scss/main.scss';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBell } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+import Navigation from "@/components/Navigation.vue";
+
+library.add(faUser);
+library.add(faBell);
+
+Vue.component("font-awesome-icon", FontAwesomeIcon);
+Vue.component("Navigation", Navigation);
 
 Vue.config.productionTip = false;
 
