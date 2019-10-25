@@ -1,11 +1,21 @@
 <template>
   <div class="nav">
     <ul>
-      <li><router-link :to="{ name: 'home' }">Designs</router-link></li>
       <li>
-        <router-link :to="{ name: 'categories' }">Categories</router-link>
+        <router-link :to="{ name: 'home' }">
+          <font-awesome-icon icon="book-open" /> Designs
+        </router-link>
       </li>
-      <li><router-link :to="{ name: 'settings' }">Settings</router-link></li>
+      <li>
+        <router-link :to="{ name: 'categories' }">
+          <font-awesome-icon icon="bookmark" /> Categories
+        </router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'settings' }">
+          <font-awesome-icon icon="cog" /> Settings
+        </router-link>
+      </li>
     </ul>
   </div>
 </template>
@@ -17,13 +27,18 @@ export default {
 </script>
 
 <style lang="scss">
-.nav {
-  padding: 30px;
+.admin__nav {
   a {
-    font-weight: bold;
-
+    display: block;
+    padding: 12px 24px;
+    text-align: left;
+    .svg-inline--fa {
+      margin-right: 12px;
+    }
     &.router-link-exact-active {
-      color: $brand-color;
+      background: #f7f7f7;
+      border-left: 4px solid $brand-color;
+      padding-left: 20px;
     }
   }
 }

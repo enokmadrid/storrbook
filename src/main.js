@@ -5,16 +5,16 @@ import App from "./App.vue";
 import router from "./router";
 import store from "./store";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
-import { faBell } from "@fortawesome/free-solid-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import Navigation from "@/components/Navigation.vue";
+import adminHeader from "@/components/Header.vue";
 
-library.add(faUser);
-library.add(faBell);
+library.add(fas);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.component("Navigation", Navigation);
+Vue.component("adminHeader", adminHeader);
 
 Vue.config.productionTip = false;
 
