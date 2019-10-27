@@ -5,9 +5,9 @@
     </a>
     <div class="toolbar">
       <a href="#" class="toolbar__user">
-        <font-awesome-icon icon="user"/>
+        <font-awesome-icon icon="user" />
         <span>Enok Madrid</span>
-        <font-awesome-icon icon="angle-down"/>
+        <font-awesome-icon icon="angle-down" />
       </a>
       <a href="#"><font-awesome-icon icon="bell"/></a>
     </div>
