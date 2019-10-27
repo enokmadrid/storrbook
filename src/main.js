@@ -9,6 +9,7 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import navigation from "@/components/Navigation.vue";
 import adminHeader from "@/components/Header.vue";
+import { createProvider } from "./vue-apollo";
 
 library.add(fas);
 
@@ -21,5 +22,6 @@ Vue.config.productionTip = false;
 new Vue({
   router,
   store,
+  apolloProvider: createProvider(),
   render: h => h(App)
 }).$mount("#app");

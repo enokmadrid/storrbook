@@ -3,12 +3,12 @@
     <ul>
       <li>
         <router-link :to="{ name: 'home' }">
-          <font-awesome-icon icon="book-open" class="icon"/> Designs
+          <font-awesome-icon icon="book-open" class="icon" /> Designs
         </router-link>
       </li>
       <li>
         <router-link :to="{ name: 'categories' }">
-          <font-awesome-icon icon="bookmark" class="icon"/> Categories
+          <font-awesome-icon icon="bookmark" class="icon" /> Categories
         </router-link>
       </li>
       <li>
