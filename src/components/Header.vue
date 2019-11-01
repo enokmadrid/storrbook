@@ -4,19 +4,52 @@
       <img alt="Vue logo" src="@/assets/logo_storrbook.svg" />
     </a>
     <div class="toolbar">
-      <a href="#" class="toolbar__user">
-        <font-awesome-icon icon="user" />
-        <span>Enok Madrid</span>
-        <font-awesome-icon icon="angle-down" />
-      </a>
-      <a href="#"><font-awesome-icon icon="bell"/></a>
+      <div v-if="!me">
+        <router-link :to="{ name: 'login' }">Login</router-link>
+      </div>
+
+      <div v-if="me">
+        <a href="#" @click.prevent="logout" >Logout</a>
+        <a href="#" class="toolbar__user">
+          <font-awesome-icon icon="user" />
+          <span>{{ me.name }}</span>
+          <font-awesome-icon icon="angle-down" />
+        </a>
+        <a href="#"><font-awesome-icon icon="bell"/></a>
+      </div>
+
     </div>
   </header>
 </template>
 
 <script>
+import gql from "graphql-tag";
+import { onLogout } from "../vue-apollo.js";
+
 export default {
-  name: "adminHeader"
+  name: "adminHeader",
+  data() {
+    return {
+      me: null
+    };
+  },
+  apollo: {
+    me: gql`
+      query {
+        me {
+          id
+          name
+          email
+        }
+      }
+    `
+  },
+  methods: {
+    logout() {
+      onLogout(this.$apollo.provider.defaultClient);
+      this.$router.push('/login');
+    }
+  }
 };
 </script>
 

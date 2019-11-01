@@ -6,6 +6,11 @@
 
 <script>
 export default {
-  name: "home"
+  name: "designs",
+  data() {
+    return {
+      designs: []
+    };
+  }
 };
 </script>
